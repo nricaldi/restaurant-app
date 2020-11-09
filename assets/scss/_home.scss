@@ -2,33 +2,60 @@
 h2 {
   font-size: 2.5rem;
   font-weight: 700;
-  margin-bottom: 1rem;
+  margin-bottom: 3rem;
   color:#fff;
 }
 
+img {
+  max-width: 100%;
+}
 
-#welcome{
-  display: grid;
-  grid-template-columns: 1fr 3fr;
-
-  min-height: 100vh;
-
-
+#welcome {
   .welcome-menu{
     background: #f4f8fb;
-    padding: 4rem;
+    width: 100%;
+    padding: 2rem;
     position: relative;
-    max-width: 500px;
+    // max-width: 500px;
+    // min-height: 40vh;
+    min-height: 150px;
+    height: 20vh;
 
     .logo {
-      margin-bottom: 3rem;
+      margin-bottom: 1rem;
+      display: flex;
 
       img{
-          max-width: 75px;
+          max-width: 50px;
+          margin: 0 auto;
       }
     }
+
+    .menu {
+      
+      .menu-title {
+        display: none;
+      }
+  
+      .links {
+        // width: 90%;
+        max-width: 300px;
+        display: flex;
+        justify-content: space-between;
+        margin: 2rem auto;
+
+        a {
+          text-decoration: none;
+          color:#000;
+          display: inline-block;
+          margin-bottom: 1rem;
+        }
+      }
+    }
+
     .social-icons {
       display: flex;
+      justify-content: center;
       a{
         display: flex;
         justify-content: center;
@@ -51,54 +78,9 @@ h2 {
     }
 
     .location {
-      position: absolute;
-      bottom: 4rem;
-
-      .address {
-        color: #777777;
-        margin-bottom: 2rem;
-        line-height: 1.5;
-      }
-      .phone-number {
-        a {
-          font-weight: 700;
-          font-size: 2rem;
-          text-decoration: none;
-          color: rgb(184, 42, 42);
-        }
-      }
+      display: none;
     }
 
-    .menu{
-      margin-bottom: 5rem;
-      .menu-title {
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        color: #000;
-        font-weight: 700;
-        font-size: 2rem;
-        border-bottom: 1px solid #131313;
-        padding-bottom: 1rem;
-        margin-bottom: 1rem;
-      }
-
-      .links {
-        li {
-          a {
-            color: #4e4e4e;
-            font-size: 1.1rem;
-            text-decoration: none;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-            display: block;
-            transition: all 250ms ease-in-out;
-            &:hover {
-              color: crimson;
-            }
-          }
-        }
-      }
-    }
   }
 
   .welcome-jumbo{
@@ -106,32 +88,27 @@ h2 {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    max-width: 100%;
-    // background: rgb(9,113,206);
-    // background: -moz-radial-gradient(circle, rgba(9,113,206,1) 0%, rgba(62,160,247,1) 100%);
-    // background: -webkit-radial-gradient(circle, rgba(9,113,206,1) 0%, rgba(62,160,247,1) 100%);
-    // background: radial-gradient(circle, rgba(9,113,206,1) 0%, rgba(62,160,247,1) 100%);
-    // filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0971ce",endColorstr="#3ea0f7",GradientType=1);
 
-    // background: rgb(240,80,68);
-    // background: -moz-radial-gradient(circle, rgba(240,80,68,1) 0%, rgba(171,18,18,1) 100%);
-    // background: -webkit-radial-gradient(circle, rgba(240,80,68,1) 0%, rgba(171,18,18,1) 100%);
-    // background: radial-gradient(circle, rgba(240,80,68,1) 0%, rgba(171,18,18,1) 100%);
-    // filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#f05044",endColorstr="#ab1212",GradientType=1);
+    background: rgb(240,80,68);
+    background: -moz-radial-gradient(circle, rgba(240,80,68,1) 0%, rgba(171,18,18,1) 100%);
+    background: -webkit-radial-gradient(circle, rgba(240,80,68,1) 0%, rgba(171,18,18,1) 100%);
+    background: radial-gradient(circle, rgba(240,80,68,1) 0%, rgba(171,18,18,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#f05044",endColorstr="#ab1212",GradientType=1);
 
-    background: #000;
-    padding: 6rem;
+    min-height: 40vh;
+    height: 80vh;
+    padding: 2rem;
 
     .status{
       display: inline-block;
-      padding: .75rem;
-      font-size: 1.25rem;
-      font-weight: 700;
+      padding: .5rem;
+      font-weight: 600;
+      font-size: 1rem;
+      margin-bottom: 1rem;
       color: #fff;
-      background: #db1f12;
+      background: #000;
       border-radius: 5px;
       align-self: flex-start;
-      margin-bottom: 2rem;
       opacity: 0;
       animation: status 2s ease-out;
       animation-delay: 2s;
@@ -140,20 +117,20 @@ h2 {
     }
     
     h1 {
-      font-size: 4rem;
+      font-size: 1.5rem;
       font-weight: 900;
       align-self: flex-start;
       color: #fff;
-      margin-bottom: 6rem;
+      margin-bottom: 1rem;
       animation: text 1s ease-in-out;
       animation-delay: 1s;
-      opacity: -0;
+      opacity: 0;
       animation-fill-mode: forwards;
-      position: relative;
+      // position: relative;
     }
 
     .burger-fries {
-      width: 100%;
+      width: 60%;
       animation: burger 1s ease-in-out;
       position: relative;
     }
@@ -189,7 +166,148 @@ h2 {
 
     }
   }
+
+  $breakpoint-tablet:350px;
+  @media (min-width: $breakpoint-tablet) {
+    .welcome-menu {
+      height: 25vh;
+    }
+    
+    .welcome-jumbo {
+      height: 75vh;
+      
+    }
+  }
+  
+  $breakpoint-laptop: 1024px;
+  @media (min-width: $breakpoint-laptop) {
+  
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+
+  min-height: 100vh;
+
+
+  .welcome-menu{
+    background: #f4f8fb;
+    // padding: 4rem;
+    // position: relative;
+    // max-width: 500px;
+    height: 100%;
+
+    .logo {
+      margin-bottom: 3rem;
+
+      img{
+          max-width: 75px;
+      }
+    }
+    .social-icons {
+      display: flex;
+      a{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+        color: #000000;
+        height: 2.5rem;
+        width: 2.5rem;
+        background: #ffffff;
+        font-size: 1rem;
+        border-radius: 50%;
+        margin-right: 10px;
+        transition: all 250ms ease-in-out;
+
+        &:hover {
+          color: #c5c5c5;
+          background: #000000;
+        }
+      }
+    }
+
+    .location {
+      position: absolute;
+      bottom: 4rem;
+      display: block;
+
+      .address {
+        color: #777777;
+        margin-bottom: 2rem;
+        line-height: 1.5;
+      }
+      .phone-number {
+        a {
+          font-weight: 700;
+          font-size: 2rem;
+          text-decoration: none;
+          color: rgb(184, 42, 42);
+        }
+      }
+    }
+
+    .menu{
+      margin-bottom: 5rem;
+      .menu-title {
+        display: block;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: #000;
+        font-weight: 700;
+        font-size: 2rem;
+        border-bottom: 1px solid #131313;
+        padding-bottom: 1rem;
+        margin-bottom: 1rem;
+      }
+
+      .links {
+        display: block;
+        margin: auto;
+        width: 100%;
+        li {
+          a {
+            color: #4e4e4e;
+            font-size: 1.1rem;
+            text-decoration: none;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            display: block;
+            transition: all 250ms ease-in-out;
+            &:hover {
+              color: #f05044;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .welcome-jumbo{
+    max-width: 100%;
+    height: 100%;
+    padding: 6rem;
+
+    .status{
+      display: inline-block;
+      padding: .75rem;
+      font-size: 1.25rem;
+      margin-bottom: 2rem;
+    }
+    
+    h1 {
+      font-size: 4rem;
+      font-weight: 900;
+      margin-bottom: 6rem;
+    }
+
+  }
+
+
+
+
+  }
+
 }
+
 
 #information{
   display: grid;
@@ -199,7 +317,6 @@ h2 {
     img {
       width: 100%;
       min-height: 100%;
-      // max-height: 700px;
       object-fit: cover;
     }
   }
@@ -216,10 +333,10 @@ h2 {
       display: grid;
       grid-template-columns: 1fr 1fr;
       grid-gap: 2rem;
-      line-height: 1.4;
+      line-height: 1.7;
       color: #8a8a8a;
       margin-bottom: 2rem;
-      font-size: 1rem;
+      font-size: 1.1rem;
     }
 
     .about-link {
@@ -249,6 +366,16 @@ h2 {
         }
       }
     }
+  }
+
+  $breakpoint-tablet: 768px;
+  @media (max-width: $breakpoint-tablet) {
+    display: block;
+
+    .restaurant-image {
+      font-size: 0;
+    }
+
   }
 }
 
@@ -292,16 +419,16 @@ h2 {
   .slide {
     width: 100%;
     position: relative;
-    min-height: 540px;
+    min-height: 600px;
     cursor: pointer;
-    margin-bottom: 5rem;
+    // margin-bottom: 5rem;
     text-align: left;
 
     &:hover {
       .background {
         // background: #f05044;
         background: #f59f00;
-        transform: translate3d(0, -5rem, 0);
+        transform: translate3d(0, -2rem, 0);
         // height: 435px;
       }
       .content {
@@ -350,7 +477,7 @@ h2 {
       }
       
       .food-description {
-        line-height: 1.6;
+        line-height: 1.7;
         color: #7a8d99;
         margin-bottom: 3rem;
       }
